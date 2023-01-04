@@ -29,6 +29,21 @@
   --size-full: 100%;
 }
 
+@font-face {
+  font-display: optional;
+  font-family: "Scramble";
+  font-style: normal;
+  src: url("https://palabros.io/assets/scramble.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: optional;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://static.domestika.org/frontend-assets/fonts/Inter-Regular.woff2") format("woff2");
+}
+
 .debug {
   outline: 1px solid var(--debug);
 }

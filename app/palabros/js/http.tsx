@@ -10,7 +10,6 @@ export const definition = async (word: string, context: AppLoadContext): Promise
 }
 
 export const search = async (filters: Filter, context: AppLoadContext): Promise<string[]> => {
-  debugger
   const params = []
   if (filters.pattern) params.push('query=' + filters.pattern)
   if (filters.start) params.push('start=' + filters.start)
@@ -20,8 +19,6 @@ export const search = async (filters: Filter, context: AppLoadContext): Promise<
 
   const results = await fetch(context.API_HOST + 'search?' + params.join('&'))
     .then(async resp => await resp.json() as string[][])
-
-  debugger
 
   return results.flat(Infinity) as string[]
 }
