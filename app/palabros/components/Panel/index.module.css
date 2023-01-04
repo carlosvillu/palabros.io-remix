@@ -1,0 +1,13 @@
+.panel-container {
+  margin-top: var(--size-l);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.panel-title {
+  font-size: var(--size-l);
+}

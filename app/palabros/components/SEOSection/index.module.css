@@ -1,0 +1,10 @@
+.seoSection-link {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.seoSection-letter {
+  text-transform: uppercase;
+  color: var(--red);
+}

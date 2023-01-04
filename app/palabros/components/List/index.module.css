@@ -1,0 +1,19 @@
+.list { 
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: var(--size-s);
+  gap: var(--size-s);
+  justify-content: center;
+  margin-top: var(--size-l);
+
+  background: white;
+  border-radius: var(--size-s);
+  padding: var(--size-xl) 0;
+}
+
+.list-item {
+  font-size: 1.5em;
+}
+

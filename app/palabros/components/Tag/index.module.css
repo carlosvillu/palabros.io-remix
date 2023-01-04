@@ -1,0 +1,27 @@
+.tag-container {
+  cursor: pointer;
+  background-color: var(--gold);
+  margin-right: var(--size-l);
+  padding: var(--size-m);
+  border-radius: var(--size-s);
+  text-transform: uppercase;
+}
+
+.tag-sub {
+  bottom: calc(-1 * var(--size-s));
+  font-size: var(--size-s);
+  position: relative;
+  vertical-align: baseline;
+}
+
+.tag-def {
+  border-bottom: 1px solid;
+  display: block;
+  font-size: 1.2em;
+  padding: 10px 25px;
+  width: 100%;
+}
+
+.tag-def:last-child {
+  border-bottom: none;
+}

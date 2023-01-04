@@ -1,0 +1,21 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: var(--size-7xl);
+}
+
+.header-MenuContainer svg {
+  width: var(--size-l);
+  height: var(--size-l);
+}
+
+.header-logo {
+  font-family: 'Scramble';
+  font-size: 2em;
+}
