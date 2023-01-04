@@ -20,7 +20,6 @@ export const links = () => [
 
 function Results(): ReactElement {
   const results = useLoaderData<string[]>() ?? [];
-  debugger
   const [sortState, setSortState] = useState<Sort>('points')
   const [cutLengthState, setCutLegthState] = useState<number>(ADD_MORE)
 
