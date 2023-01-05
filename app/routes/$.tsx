@@ -11,7 +11,7 @@ export const links = () => [
 export const loader = async ({context, params, request}: DataFunctionArgs) => {
   const filter = fromPathToFilter(new URL(request.url).pathname)
   const results = await search(filter, context)
-  return new Response(JSON.stringify(results), {
+  return new Response(JSON.stringify({results, API_HOST: context.API_HOST}), {
     headers: {
       "Content-Type": "application/json",
     },

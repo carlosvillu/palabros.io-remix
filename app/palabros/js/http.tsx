@@ -2,8 +2,8 @@ import type {Filter} from './strings'
 import type {AppLoadContext} from "@remix-run/node";
 
 
-export const definition = async (word: string, context: AppLoadContext): Promise<string[]> => {
-  const results = await fetch(context.API_HOST + 'definition?query=' + word)
+export const definition = async (word: string, API_HOST: string): Promise<string[]> => {
+  const results = await fetch(API_HOST + 'definition?query=' + word)
     .then(async resp => await resp.json())
 
   return results as string[]

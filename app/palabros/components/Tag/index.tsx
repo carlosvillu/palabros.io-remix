@@ -4,6 +4,7 @@ import {useState} from 'react'
 import {definition} from '../../js/http'
 import List, {links as listLinks} from '../List'
 import Loading, {links as loadingLinks} from '../Loading'
+import {useLoaderData} from "@remix-run/react";
 
 import styles from './index.module.css'
 
@@ -19,6 +20,7 @@ export const links = () => [
 ];
 
 function Tag({word, points}: Props): ReactElement {
+  const {API_HOST} = useLoaderData<{results: string[], API_HOST: string}>() ?? {API_HOST: ''};
   const [defintionsState, setDefinitionsState] = useState<string[] | undefined>()
   const [loadingState, setLoadingState] = useState<boolean>(false)
   const [showDefState, setShowDefState] = useState(true)
@@ -26,7 +28,7 @@ function Tag({word, points}: Props): ReactElement {
   const handeClick = async (): Promise<void> => {
     if (defintionsState === undefined) {
       setLoadingState(true)
-      setDefinitionsState(await definition(word))
+      setDefinitionsState(await definition(word, API_HOST))
       setLoadingState(false)
     }
 

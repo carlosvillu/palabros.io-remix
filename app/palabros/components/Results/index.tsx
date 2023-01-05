@@ -19,7 +19,8 @@ export const links = () => [
 ];
 
 function Results(): ReactElement {
-  const results = useLoaderData<string[]>() ?? [];
+  const {results} = useLoaderData<{results: string[], API_HOST: string}>() ?? {results: []};
+
   const [sortState, setSortState] = useState<Sort>('points')
   const [cutLengthState, setCutLegthState] = useState<number>(ADD_MORE)
 
