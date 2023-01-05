@@ -3,6 +3,7 @@ import {fromPathToFilter, fromFilterToTitle} from '~/palabros/js/strings'
 import type {DataFunctionArgs} from "@remix-run/node";
 import App, {links as appLinks} from '../palabros/App'
 import type {MetaFunction} from "@remix-run/node";
+import {useLoaderData} from "@remix-run/react";
 
 export const links = () => [
   ...appLinks(),
@@ -22,7 +23,9 @@ export const meta: MetaFunction = ({data, location}) => {
 export const loader = async ({context, params, request}: DataFunctionArgs) => {
   const filter = fromPathToFilter(new URL(request.url).pathname)
   const results = await search(filter, context)
+
   return new Response(JSON.stringify({results, API_HOST: context.API_HOST}), {
+    status: results.length !== 0 ? 200 : 404,
     headers: {
       "Content-Type": "application/json",
     },
@@ -30,5 +33,6 @@ export const loader = async ({context, params, request}: DataFunctionArgs) => {
 }
 
 export default function Index() {
+  const {results} = useLoaderData<{results: string[], API_HOST: string}>() ?? {results: []};
   return <App />
 }
