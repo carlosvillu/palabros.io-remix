@@ -30,14 +30,14 @@
 }
 
 @font-face {
-  font-display: optional;
+  font-display: swap;
   font-family: "Scramble";
   font-style: normal;
   src: url("https://palabros-io.pages.dev/assets/scramble.woff2") format("woff2");
 }
 
 @font-face {
-  font-display: optional;
+  font-display: swap;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
